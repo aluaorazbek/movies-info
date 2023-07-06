@@ -9,11 +9,11 @@ This project is a simplified version of IMDb, allowing users to browse a list of
 
 **Technologies Used**
 
-Next.js 13 (TypeScript)
-React
-React-Query
-Styled Components
-ESLint
+- Next.js 13 (TypeScript)
+- React
+- React-Query
+- Styled Components
+- ESLint
 
 **Homepage**
 
