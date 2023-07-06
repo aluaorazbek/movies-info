@@ -1,5 +1,38 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+Here is an updated version of the project description, including the mentioned technologies and key elements:
+
+**Project Description**
+
+This project is a simplified version of IMDb, allowing users to browse a list of popular movies and access information such as summaries, cast members, directors, budgets, and more. The website features a search box for movie searches, and when a movie is clicked, users are redirected to a new page displaying detailed information about that movie.
+
+**Technologies Used**
+
+Next.js 13 (TypeScript)
+React
+React-Query
+Styled Components
+ESLint
+
+**Homepage**
+
+- Header: Includes a logo and a search box for movie searches.
+- Hero Section: Displays the image of the first movie in the list.
+- Lists of All Movies: Provides a collection of popular movies for users to browse.
+
+
+
+**Movie Information Page**
+
+- Breadcrumb: Provides a navigation trail allowing users to track their location within the website's hierarchy.
+- Movie Information: Presents detailed information about the selected movie, including summaries, cast members, directors, budgets, and more.
+- Cast List: Displays a list of actors and actresses involved in the movie.
+
+Data Fetching: Movie data on the homepage is fetched on the client side using React-Query. Data is loaded when the user reaches the bottom of the page, and a spinner is displayed during the loading process. There is also an image blur effect. 
+
+
+
 ## Getting Started
 
 First, run the development server:
