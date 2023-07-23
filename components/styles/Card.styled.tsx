@@ -3,24 +3,17 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   height: 20rem; 
-
 `;
 
 export const ContentWrapper = styled.div`
   position: relative;
   height: 100%;
 
-
   div {
     position: absolute;
     width: 100%;
     bottom: 0;
-    /* padding: 0.5rem 1rem; */
-
-    /* border-radius: 0 0 1rem 1rem; */
     background-color: #4b5563;
-    /* display: flex; */
-  /* align-items: center; */
   }
 
   h2 {
@@ -42,27 +35,4 @@ export const ContentWrapper = styled.div`
     padding: 0;
   }
 `;
-
-
-
-
-
-
-
-
-
-
-// const MyComponent = ({ imgUrl, title, subtitle }) => (
-//   <Wrapper>
-//     <ContentWrapper>
-//       <Thumb imgUrl={imgUrl} />
-//       <div>
-//         <h2>{title}</h2>
-//         {subtitle ? <p >{subtitle}</p> : null}
-//       </div>
-//     </ContentWrapper>
-//   </Wrapper>
-// );
-
-// export default MyComponent;
-
+//REVIEW - 사용하지 않는 속성은 지워주시면 좋을 것 같아요!

@@ -39,3 +39,15 @@ export type Credits = {
   cast: Cast[];
   crew: Crew[];
 };
+
+
+export type ImgUrl = {
+  pages: {
+    results: {
+      backdrop_path?: string | null;
+    }[];
+  }[];
+};
+
+
+

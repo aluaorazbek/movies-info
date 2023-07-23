@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import SearchInput from '../SearchInput/SearchInput';
+import IsNeededSearchInput from '../IsNeededSearchInput/IsNeededSearchInput';
 import RMDBLogo from '../../public/rmdb-logo.svg';
 import RMDBLogoSmall from '../../public/rmdb-logo-small.svg';
 import { Wrapper, ContentWrapper, LogoContainer, SearchContainer } from '../styles/Header.styled';
@@ -24,7 +24,7 @@ const Header = ({ setQuery }: Props) => (
       </Link>
       {setQuery && (
         <SearchContainer>
-          <SearchInput setQuery={setQuery} />
+          <IsNeededSearchInput setQuery={setQuery} />
         </SearchContainer>
       )}
     </ContentWrapper>
