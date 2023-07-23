@@ -16,5 +16,3 @@ export const StyledInput = styled.input`
     border: 2px solid #61dafb;
   }
 `;
-
-

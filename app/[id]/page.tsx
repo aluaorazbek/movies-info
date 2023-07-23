@@ -26,7 +26,6 @@ type Props = {
 //REVIEW - api 로직을 컴포넌트 UI 로직과 분리해주면, 코드 가독성과 유지보수성이 좋아집니다. 그리고 추후 테스트코드를 작성할 때도 편리해집니다!
 //REVIEW - 저희는 services 폴더를 만들어서, 도메인별로 데이터를 가져오는 api 레이어를 분리해주고 있어요!
 //REVIEW - 예를 들어서, movie 데이터를 가져오는 api 로직은 services/movie.ts 파일에 작성해줄 수 있겠네요!
-
 //REVIEW - 그리고 HomePage에서 사용한 것처럼 MoviePage에서도 React-query를 사용해주면 좋을 것 같아요!
 
 export default async function MoviePage({ params: { id } }: Props) {
@@ -106,4 +105,4 @@ export default async function MoviePage({ params: { id } }: Props) {
 //       )}
 //     </main>
 //   );
-// }
+// } 

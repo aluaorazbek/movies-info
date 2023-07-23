@@ -27,6 +27,7 @@ export async function getCreditsData(id: string): Promise<Credits> {
 }
 
 
+
 // import { useQuery } from '@tanstack/react-query';
 // export function useMovieData(id: string) {
 //   return useQuery<Movie>(['movie', id], () => getMovieData(id));
@@ -34,7 +35,6 @@ export async function getCreditsData(id: string): Promise<Credits> {
 // export function useCreditsData(id: string) {
 //   return useQuery<Credits>(['credits', id], () => getCreditsData(id));
 // }
-
 
 
 // import axios from 'axios';
