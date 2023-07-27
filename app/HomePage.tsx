@@ -13,7 +13,7 @@ import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE } from "../config";
 //REVIEW - 절대 경로로 잡아주면, 폴더 구조가 바뀌어도 상관없어요!
 //REVIEW - tsconfig.json 파일에 "@components/*": ["components/*"] 이런 식으로 설정해서 사용하면 됩니다!
 //REVIEW - 이렇게 설정하면, import Header from '@components/Header/Header'; 이런 식으로 사용할 수 있어요!
-//REVIEW - componnets 폴더뿐만 아니라 styles, api 등 다른 폴더도 절대 경로로 잡아주면 좋을 것 같아요!
+//REVIEW - componnets 폴더뿐만 아니라 styles, api 등 다른 폴더도 절대 경로로 잡아주면 좋을 것 같아요!n
 
 import Header from "@components/Header/Header";
 import Hero from "@components/Hero/Hero";

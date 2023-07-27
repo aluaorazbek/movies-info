@@ -25,30 +25,3 @@ export async function getCreditsData(id: string): Promise<Credits> {
   const credits = await fetch(creditsUrl(id));
   return (await credits.json()) as Credits;
 }
-
-
-
-// import { useQuery } from '@tanstack/react-query';
-// export function useMovieData(id: string) {
-//   return useQuery<Movie>(['movie', id], () => getMovieData(id));
-// }
-// export function useCreditsData(id: string) {
-//   return useQuery<Credits>(['credits', id], () => getCreditsData(id));
-// }
-
-
-// import axios from 'axios';
-// // import { movieUrl, creditsUrl } from './config';
-// // import type { Movie, Credits } from './types';
-
-// // Fetch movie data
-// export async function getMovieData(id: string): Promise<Movie> {
-//   const response = await axios.get(movieUrl(id));
-//   return response.data as Movie;
-// }
-
-// // Fetch credits data
-// export async function getCreditsData(id: string): Promise<Credits> {
-//   const response = await axios.get(creditsUrl(id));
-//   return response.data as Credits;
-// }

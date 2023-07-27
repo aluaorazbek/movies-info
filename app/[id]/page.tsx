@@ -39,6 +39,7 @@ export default async function MoviePage({ params: { id } }: Props) {
       <Header />
       <Breadcrumb title={movie.original_title} />
       <React.Suspense fallback={<Spinner />}>
+        {/* @ts-expect-error Async Server Component */}
         <MovieInfo
           creditsPromise={_credits}
           thumbUrl={movie.poster_path ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path : '/no_image.jpg'}
@@ -53,56 +54,10 @@ export default async function MoviePage({ params: { id } }: Props) {
           budget={movie.budget}
           revenue={movie.revenue}
         />
+        {/* @ts-expect-error Async Server Component */}
         <Actors creditsPromise={_credits} />
       </React.Suspense>
     </main>
   );
 }
 
-
-
-// export default function MoviePage({ params: { id } }: Props) {
-//   const movieQuery = useQuery(['movie', id], () => getMovieData(id));
-//   const creditsQuery = useQuery(['credits', id], () => getCreditsData(id));
-
-//   const { data: movie, isLoading: isMovieLoading, error: movieError } = movieQuery;
-//   const { data: credits, isLoading: isCreditsLoading, error: creditsError } = creditsQuery;
-
-//   if (isMovieLoading || isCreditsLoading) {
-//     return <Spinner />;
-//   }
-
-//   if (movieError || creditsError) {
-//     return <div>Error occurred while fetching data.</div>;
-//   }
-
-//   const creditsPromise = Promise.resolve(credits ?? {} as Credits); 
-
-//   return (
-//     <main>
-//       <Header />
-//       {movie && (
-//         <>
-//           <Breadcrumb title={movie.original_title} />
-//           <React.Suspense fallback={<Spinner />}>
-//             <MovieInfo
-//               creditsPromise={creditsPromise}
-//               thumbUrl={movie.poster_path ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path : '/no_image.jpg'}
-//               rating={movie.vote_average}
-//               year={movie.release_date.split('-')[0]}
-//               backgroundImgUrl={
-//                 movie.backdrop_path ? IMAGE_BASE_URL + BACKDROP_SIZE + movie.backdrop_path : '/no_image.jpg'
-//               }
-//               title={movie.original_title}
-//               summary={movie.overview}
-//               time={movie.runtime}
-//               budget={movie.budget}
-//               revenue={movie.revenue}
-//             />
-//             <Actors creditsPromise={creditsPromise} />
-//           </React.Suspense>
-//         </>
-//       )}
-//     </main>
-//   );
-// } 
