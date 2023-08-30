@@ -1,6 +1,5 @@
 'use client';
 import styled from 'styled-components';
-//REVIEW - 사용하지 않는 속성은 지워주시면 좋을 것 같아요!
 
 export const Wrapper = styled.div`
   height: 20rem; 

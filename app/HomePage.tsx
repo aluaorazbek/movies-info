@@ -9,11 +9,6 @@ import { useFetchMovies, getImgUrl, getGridTitle } from "@api/fetchHooks";
 import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE } from "../config";
 // Components
 
-//REVIEW - components 폴더와 같이 최상위 폴더는 절대 경로로 잡아주는게 좋을 것 같아요!
-//REVIEW - 절대 경로로 잡아주면, 폴더 구조가 바뀌어도 상관없어요!
-//REVIEW - tsconfig.json 파일에 "@components/*": ["components/*"] 이런 식으로 설정해서 사용하면 됩니다!
-//REVIEW - 이렇게 설정하면, import Header from '@components/Header/Header'; 이런 식으로 사용할 수 있어요!
-//REVIEW - componnets 폴더뿐만 아니라 styles, api 등 다른 폴더도 절대 경로로 잡아주면 좋을 것 같아요!n
 
 import Header from "@components/Header/Header";
 import Hero from "@components/Hero/Hero";
@@ -39,8 +34,6 @@ const HomePage = () => {
     <main className="main-element" onScroll={handleScroll}>
       <Header setQuery={setQuery} />
       {!query && data && data.pages && (
-      //REVIEW - imgUrl 데이터에 접근하는 부분이 조금 복잡해 보이네요.
-      //REVIEW - getImgUrl 함수를 따로 만들어서, 데이터에 접근하는 부분을 간단하게 만들어주면 좋을 것 같아요!
       <Hero
         imgUrl={ getImgUrl(data)}
         title={data.pages[0].results[0].title}
@@ -48,15 +41,9 @@ const HomePage = () => {
         />
       )}
       <Grid
-        //REVIEW - 이 부분도 imgUrl처럼 getGridTitle 함수를 따로 만들어서, 데이터에 접근하는 부분을 간단하게 만들어주면 좋을 것 같아요!
         title={ getGridTitle(data, query)
         }
       >
-        {/* REVIEW 
-      다음 코드를 이런식으로 수정하면 어떨까요?
-      → 개인적으로 삼항 연산자는 가독성을 떨어트릴 수 있다고 생각하기에 최소한으로 사용 고집하고 있습니다!
-      ex) {data?.pages && data.pages.map((page => ......))
-       */}
         {data && data.pages &&
           data.pages.map((page) =>
               page.results.map((movie) => (
@@ -76,15 +63,6 @@ const HomePage = () => {
             )
           }
       </Grid>
-      {/* REVIEW 
-      이러한 로딩처리는 return 외부에서 선언하는 것이 어떨까요?
-      → 개인적으로 return 문 안에서 UI 코드만 있는 것이 가독성을 높여준다고 생각합니다.
-      ex) if(isLoading || isFetching) return <Spinner /> → 30 번째 줄 (30 lines)
-       */
-        //REVIEW - 이부분은 상단에서 처리해줄 수 있을 것 같네요. 그리고
-        //REVIEW - 삼항연산자를 사용하는 대신에 && 연산자를 사용하면 더 깔끔해질 것 같아요!
-        //REVIEW - 예를 들어, isLoading && <Spinner /> 이런 식으로 사용하면 됩니다!
-       }
        
       {(isLoading || isFetching) && <Spinner />}
     </main>
